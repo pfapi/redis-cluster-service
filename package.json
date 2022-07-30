@@ -1,6 +1,6 @@
 {
   "name": "redis-cluster-service",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "github action to install redis server and redis cluster as service for ubuntu-latest",
   "main": "dist/index.js",
   "scripts": {
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/pfapi/redis-cluster-service#readme",
   "dependencies": {
-    "@actions/core": "^1.9.0",
     "@vercel/ncc": "^0.34.0"
   }
 }
