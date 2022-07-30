@@ -10,7 +10,7 @@ redis-cluster-service is a github action to install latest redis server and redi
 
 ```yaml
       - name: install redis cluster service
-        uses: pfapi/redis-cluster-service@1.0.2
+        uses: pfapi/redis-cluster-service@v1
 ```
 
 The cluster nodes listen on port 7000, 7001, 7002, 7003, 7004 and 7005.
@@ -35,7 +35,7 @@ jobs:
     steps:
 
       - name: install redis cluster service
-        uses: pfapi/redis-cluster-service@1.0.2
+        uses: pfapi/redis-cluster-service@v1
 
       - name: start redis cluster
         run: sudo systemctl start redis-cluster
