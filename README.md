@@ -2,7 +2,7 @@
 
 # redis-cluster-service
 
-In many situation, we just need a redis-server service as the same way as other services: nginx, mysql and postgres that we can use systemctl to start and stop it. 
+In many situations, we just need a redis-server service as the same way as other services: nginx, mysql and postgres that we can use systemctl to start and stop it. 
 
 redis-cluster-service is a github action to install latest redis server and redis cluster as service for ubuntu-latest. 
 
