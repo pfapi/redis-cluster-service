@@ -1,8 +1,10 @@
+[![tests](https://github.com/pfapi/redis-cluster-service/actions/workflows/tests.yml/badge.svg)](https://github.com/pfapi/redis-cluster-service/actions/workflows/tests.yml)
+
 # redis-cluster-service
 
-a github action to install redis server and redis cluster as service for ubuntu-latest.
+In many situation, we just need a redis-server service as the same way as other services: nginx, mysql and postgres that we can use systemctl to start and stop it. 
 
-It installs the latest redis server service and setup redis cluster for ubuntu-latest.
+redis-cluster-service is a github action to install latest redis server and redis cluster as service for ubuntu-latest. 
 
 In your github action, you can run
 
