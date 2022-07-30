@@ -1,0 +1,36 @@
+module.exports = (port) => `
+bind 0.0.0.0
+protected-mode no
+port ${port}
+tcp-backlog 511
+timeout 0
+tcp-keepalive 300
+daemonize yes
+supervised auto
+pidfile /run/redis/redis-server-${port}.pid
+loglevel notice
+logfile /var/log/redis/redis-server-${port}.log
+databases 16
+always-show-logo no
+set-proc-title yes
+proc-title-template "{title} {listen-addr} {server-mode}"
+stop-writes-on-bgsave-error yes
+rdbcompression yes
+rdbchecksum yes
+dbfilename dump.rdb
+rdb-del-sync-files no
+dir /var/lib/redis
+replica-serve-stale-data yes
+replica-read-only yes
+repl-diskless-sync yes
+repl-diskless-sync-delay 5
+repl-diskless-sync-max-replicas 0
+repl-diskless-load disabled
+repl-disable-tcp-nodelay no
+replica-priority 100
+acllog-max-len 128
+jemalloc-bg-thread yes
+cluster-enabled yes
+cluster-config-file nodes-${port}.conf
+cluster-node-timeout 5000
+appendonly yes`;

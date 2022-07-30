@@ -1,0 +1,52 @@
+name: tests
+on: 
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+
+  tests:
+
+    timeout-minutes: 3
+
+    runs-on: ubuntu-latest
+
+    name: test run on redis cluster service
+
+    steps:
+
+      - name: Checkout pfapi/redis-cluster-service
+        uses: actions/checkout@v3
+        with:
+            repository: pfapi/redis-cluster-service
+
+      - name: run index
+        run: node ./index.js
+
+      - name: get redis server version
+        run: redis-server -v
+
+      - name: start redis server
+        run: sudo systemctl start redis-server
+
+      - name: test redis
+        run: redis-cli set key value ; redis-cli get key
+
+      - name: stop redis server
+        run: sudo systemctl stop redis-server
+
+      - name: start redis cluster
+        run: sudo systemctl start redis-cluster
+
+      - name: check cluster
+        run: redis-cli --cluster check 127.0.0.1:7000
+
+      - name: stop redis cluster
+        run: sudo systemctl stop redis-cluster

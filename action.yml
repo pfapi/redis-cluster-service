@@ -1,0 +1,13 @@
+name: 'Install Redis Cluster As Service'
+
+description: 'Install redis cluster as service'
+
+inputs:
+  cluster:
+    description: 'false for not build cluster'
+    default: true
+
+runs:
+
+  using: 'node16'
+  main: 'dist/index.js'

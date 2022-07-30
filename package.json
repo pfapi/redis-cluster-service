@@ -1,0 +1,25 @@
+{
+  "name": "redis-cluster-service",
+  "version": "1.0.0",
+  "description": "github action to install redis server and redis cluster as service for ubuntu-latest",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "NODE_ENV=production ncc build index.js -o dist --minify",
+    "watch": "NODE_ENV=production ncc build index.js -w -o dist --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfapi/redis-cluster-service.git"
+  },
+  "keywords": ["github", "action", "ubuntu-latest", "redis", "cluster", "service"],
+  "author": "Sam Wen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pfapi/redis-cluster-service/issues"
+  },
+  "homepage": "https://github.com/pfapi/redis-cluster-service#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "@vercel/ncc": "^0.34.0"
+  }
+}
