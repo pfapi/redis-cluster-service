@@ -27,8 +27,14 @@ jobs:
         with:
             repository: pfapi/redis-cluster-service
 
-      - name: run index
-        run: node ./index.js
+      - name: Install dependencies
+        run: npm install
+
+      - name: build 
+        run: npm run build
+
+      - name: run dist/index
+        run: node dist/index.js
 
       - name: get redis server version
         run: redis-server -v
